@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.taniarascia.com/getting-started-with-git/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<title>Getting Started with Git – Tania Rascia</title>
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Tania Rascia » Getting Started with Git Comments Feed" href="https://www.taniarascia.com/getting-started-with-git/feed/">
+<meta name="author" content="Tania Rascia">
+<meta name="description" content="Git is a difficult subject to tackle for self-taught web developers who didnt learn to code with a team. If youve always worked alone and want an ...">
+<meta property="og:title" content="Getting Started with Git">
+<meta property="og:description" content="Git is a difficult subject to tackle for self-taught web developers who didnt learn to code with a team. If youve always worked alone and want an ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.taniarascia.com/getting-started-with-git/">
+<meta property="og:site_name" content="Tania Rascia - Web Design and Development">
+<meta property="og:image" content="https://www.taniarascia.com/wp-content/uploads/git-150x150.png">
+		<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.taniarascia.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./index_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="style-css" href="./index_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="All-css" href="./index_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="FontAwesome-css" href="./index_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://www.taniarascia.com/wp-json/">
+<link rel="next" title="Basic HTML5 Skeleton File" href="https://www.taniarascia.com/basic-html5-file/">
+<meta name="generator" content="WordPress 4.8">
+<link rel="canonical" href="https://www.taniarascia.com/getting-started-with-git/">
+<link rel="shortlink" href="https://www.taniarascia.com/?p=6">
+<link rel="alternate" type="application/json+oembed" href="https://www.taniarascia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.taniarascia.com%2Fgetting-started-with-git%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.taniarascia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.taniarascia.com%2Fgetting-started-with-git%2F&amp;format=xml">
+
+	
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-42068444-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	
+	
+<style type="text/css">:root a[href^="http://www.drowle.com/"], :root #\5f _mom_ad_2, :root #header + #content > #left > #rlblock_left, :root a[href^="http://keep2share.cc/pr/"], :root #MAIN.ShowTopic > .ad, :root #\5f _mom_ad_12, :root #center_col > #main > .dfrd > .mnr-c > .c._oc._zs, :root .__y_elastic .__y_item, :root a[href^="http://ul.to/ref/"], :root a[href^="http://landingpagegenius.com/"], :root a[href^="http://ads.pheedo.com/"], :root #\5f _nq__hh[style="display:block!important"], :root a[href^="http://www.getyourguide.com/?partner_id="], :root a[href^="http://lp.ncdownloader.com/"], :root #ads > .dose > .dosesingle, :root .inlineNewsletterSubscription + .inlineNewsletterSubscription div[class$="_item"], :root #assetsListings[style="display: block;"], :root a[href^="http://b.bestcompleteusa.info/"], :root #main-content > [style="padding:10px 0 0 0 !important;"], :root a[href^="https://www.spyoff.com/"], :root .ob_container a[data-redirect^="http://paid.outbrain.com/network/redir?"], :root #center_col > #\5f Emc, :root a[href^="http://secure.signup-way.com/"], :root a[href^="http://easydownload4you.com/"], :root #center_col > #res > #topstuff + #search > div > #ires > #rso > #flun, :root a[href^="http://www.affbuzzads.com/affiliate/"], :root a[href^="http://web.adblade.com/"], :root a[href^="http://cdn3.adexprts.com/"], :root #center_col > #resultStats + #tads, :root #center_col > #resultStats + #tads + #res + #tads, :root a[href^="http://codec.codecm.com/"], :root #cnt #center_col > #taw > #tvcap > .c._oc._Lp, :root #center_col > #resultStats + div + #res + #tads, :root div[id^="div-gpt-ad"], :root a[href^="http://liversely.com/"], :root #center_col > #resultStats + div[style="border:1px solid #dedede;margin-bottom:11px;padding:5px 7px 5px 6px"], :root #topstuff > #tads, :root #center_col > #taw > #tvcap > .rscontainer, :root #center_col > div[style="font-size:14px;margin-right:0;min-height:5px"] > div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff8e7"], :root a[href^="http://fileloadr.com/"], :root .gbfwa > div[class$="_item"], :root div[id^="ad_script_"], :root a[href^="http://www.friendlyadvertisements.com/"], :root #cnt #center_col > #res > #topstuff > .ts, :root a[href^="http://affiliates.pinnaclesports.com/processing/"], :root #mn div[style="position:relative"] > #center_col > ._Ak, :root #content > #center > .dose > .dosesingle, :root #content > #right > .dose > .dosesingle, :root a[href^="http://fsoft4down.com/"], :root a[href^="http://buysellads.com/"], :root #flowplayer > div[style="position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px; z-index: 999;"], :root a[href^="http://www.easydownloadnow.com/"], :root a[href^="http://n217adserv.com/"], :root a[href*="emprestimo.eu"], :root #mn #center_col > div > h2.spon:first-child + ol:last-child, :root div[id^="ads120_600-widget"], :root .rc-cta[data-target], :root #flowplayer > div[style="z-index: 208; position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px;"], :root a[href^="http://c.ketads.com/"], :root .GB3L-QEDGY .GB3L-QEDF- > .GB3L-QEDE-, :root a[href^="http://www.usearchmedia.com/signup?"], :root #main_col > #center_col div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff7ed"], :root a[href^="http://banners.victor.com/processing/"], :root .__zinit .__y_item, :root a[href^="https://www.FriendlyDuck.com/AF_"], :root #mbEnd[cellspacing="0"][cellpadding="0"], :root a[href^="http://ads.sprintrade.com/"], :root #mn #center_col > div > h2.spon:first-child, :root a[href^="http://farm.plista.com/pets"], :root #rhs_block > .ts[cellspacing="0"][cellpadding="0"][style="padding:0"], :root .__yinit .__y_item, :root #mn div[style="position:relative"] > #center_col > div > ._dPg, :root a[href^="https://www.firstload.com/affiliate/"], :root #resultspanel > #topads, :root a[href^="http://www.faceporn.net/free?"], :root a[href^="http://www.coinducks.com/AF_"], :root #rhs_block > #mbEnd, :root a[href^="http://uploaded.net/ref/"], :root #rhs_block .mod > .gws-local-hotels__booking-module, :root #rhs_block .mod > .luhb-div > div[data-async-type="updateHotelBookingModule"], :root a[href^="http://www.fbooksluts.com/"], :root a[href^="http://jobitem.org/"], :root #rhs_block .xpdopen > ._OKe > div > .mod > ._yYf, :root a[href^="http://www.moneyducks.com/"], :root #rhs_block > ol > .rhsvw > .kp-blk > .xpdopen > ._OKe > ol > ._DJe > .luhb-div, :root a[href^="http://websitedhoome.com/"], :root .trc_rbox_div .syndicatedItem, :root .mw > #rcnt > #center_col > #taw > #tvcap > .c, :root a[href^="http://ad.yieldmanager.com/"], :root .lads[width="100%"][style="background:#FFF8DD"], :root a[href^="http://taboola-"][href*="/redirect.php?app.type="], :root #rhs_block > script + .c._oc._Ve.rhsvw, :root a[href^="http://www.uniblue.com/cm/"], :root #tads + div + .c, :root a[href^="http://ads.betfair.com/redirect.aspx?"], :root #rhswrapper > #rhssection[border="0"][bgcolor="#ffffff"], :root a[href^="http://adserver.itsfogo.com/"], :root #ssmiwdiv[jsdisplay], :root .__ywl .__y_item, :root a[href^="http://ads.activtrades.com/"], :root .GFYY1SVD2 > .GFYY1SVC2 > .GFYY1SVF5, :root .GHOFUQ5BG2 > .GHOFUQ5BF2 > .GHOFUQ5BG5, :root div[id^="mainads"], :root .GFYY1SVE2 > .GFYY1SVD2 > .GFYY1SVG5, :root .jobs-information-call-to-action + .jobs-information-call-to-action div[class$="_item"], :root a[href^="http://www.terraclicks.com/"], :root a[href^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://go.oclaserver.com/"], :root a[href^="http://clickandjoinyourgirl.com/"], :root .GJJKPX2N1 > .GJJKPX2M1 > .GJJKPX2P4, :root .GKJYXHBF2 > .GKJYXHBE2 > .GKJYXHBH5, :root a[href^="http://www.streamtunerhd.com/signup?"], :root .GPMV2XEDA2 > .GPMV2XEDP1 > .GPMV2XEDJBB, :root .Mpopup + #Mad > #MadZone, :root .__y_inner > .__y_item, :root .__ywvr .__y_item, :root .ch[onclick="ga(this,event)"], :root .icons-rss-feed + .icons-rss-feed div[class$="_item"], :root a[href^="http://www.epicgameads.com/"], :root a[href^="http://hyperlinksecure.com/go/"], :root .l-container > #fishtank, :root .mod > ._jH + .rscontainer, :root a[href^="http://xads.zedo.com/"], :root a[href^="http://clicks.binarypromos.com/"], :root .mw > #rcnt > #center_col > #taw > .c, :root .nrelate .nr_partner, :root a[href^="http://www.paddypower.com/?AFF_ID="], :root .ob_container .item-container-obpd, :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root .plistaList > .itemLinkPET, :root a[href^="http://bcp.crwdcntrl.net/"], :root a[href^="http://adtransfer.net/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root a[href^="http://www.pinkvisualgames.com/?revid="], :root .plista_widget_belowArticleRelaunch_item[data-type="pet"], :root a[href^="http://abc2.mobile-10.com/"], :root .ra[align="left"][width="30%"], :root .ra[align="right"][width="30%"], :root .ra[width="30%"][align="right"] + table[width="70%"][cellpadding="0"], :root .rhsvw[style="background-color:#fff;margin:0 0 14px;padding-bottom:1px;padding-top:1px;"], :root a[href^="http://www.fducks.com/"], :root a[href^="http://record.sportsbetaffiliates.com.au/"], :root .rscontainer > .ellip, :root a[href^="http://cinema.friendscout24.de?"], :root .section-result[data-result-ad-type], :root .trc_rbox .syndicatedItem, :root .trc_rbox_border_elm .syndicatedItem, :root .trc_rbox_div .syndicatedItemUB, :root .trc_rbox_div a[target="_blank"][href^="http://tab"], :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="http://www.ringtonematcher.com/"], :root .widget-pane-section-result[data-result-ad-type], :root div[id^="div-adtech-ad-"], :root ADS-RIGHT, :root div[id^="div_openx_ad_"], :root AFS-AD, :root a[href^="//srv.buysellads.com/"], :root AMP-AD, :root a[href^="http://engine.newsmaxfeednetwork.com/"], :root [ad-id^="googlead"], :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root [lazy-ad="lefttop_banner"], :root a[href^="http://pokershibes.com/index.php?ref="], :root [onclick*="content.ad/"], :root [onclick^="window.open('http://adultfriendfinder.com/search/"], :root a[href^="http://www.bet365.com/home/?affiliate"], :root a[href^="http://ryushare.com/affiliate.python"], :root a[href^=" http://n47adshostnet.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://affiliate.godaddy.com/"], :root a[data-redirect^="http://click.plista.com/pets"], :root a[href^="http://adclick.g.doubleclick.net/"], :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"], :root a[href^="https://bs.serving-sys.com"], :root a[data-url^="http://paid.outbrain.com/network/redir?"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="http://hd-plugins.com/download/"], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href$="/vghd.shtml"], :root a[href*=".adk2x.com/"], :root a[href^="http://mmo123.co/"], :root a[href*=".adsrv.eacdn.com/"] > img, :root a[href^="http://k2s.cc/pr/"], :root a[href*=".qertewrt.com/"], :root a[href^="http://dwn.pushtraffic.net/"], :root a[href*=".trust.zone"], :root a[href^="http://www.ducksnetwork.com/"], :root a[href*="/adrotate-out.php?"], :root td[valign="top"] > .mainmenu[style="padding:10px 0 0 0 !important;"], :root a[href*="/cmd.php?ad="], :root a[href*="=Adtracker"], :root a[href^="http://www.freefilesdownloader.com/"], :root a[href^="http://mgid.com/"], :root a[href^="http://data.ad.yieldmanager.net/"], :root a[href^="http://ads.integral-marketing.com/"], :root a[href^=" http://ads.ad-center.com/"], :root a[href*="ad2upapp.com/"], :root a[href*="friendlyduck.com"], :root a[href*="googleme.eu"], :root a[href*="letsadvertisetogether.com"], :root a[href*="onclkds."], :root a[href^="//adbit.co/?a=Advertise&"], :root a[href^="http://www.roboform.com/php/land.php"], :root a[href^="//ads.ad-center.com/"], :root a[href^="//api.ad-goi.com/"], :root a[href^="//t.MtagMonetizationA.com/"], :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"], :root a[href^="http://www.babylon.com/welcome/index?affID"], :root a[href^="//www.mgid.com/"], :root a[href^="http://1phads.com/"], :root a[href^="https://www.share-online.biz/affiliate/"], :root a[href^="http://internalredirect.site/"], :root a[href^="http://360ads.go2cloud.org/"], :root a[href^="http://www.duckcash.eu/AF_"], :root a[href^="http://3wr110.net/"], :root a[href^="http://www.menaon.com/installs/"], :root a[href^="http://NowDownloadAll.com"], :root a[href^="http://a.adquantix.com/"], :root a[href^="http://prousa.work/"], :root a[href^="http://ad-apac.doubleclick.net/"], :root a[href^="http://fusionads.net"], :root a[href^="http://ad-emea.doubleclick.net/"], :root a[href^="http://ad.au.doubleclick.net/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="http://adexprt.me/"], :root a[href^="http://feedads.g.doubleclick.net/"], :root a[href^="http://api.ringtonematcher.com/"], :root a[href^="http://adf.ly/?id="], :root a[href^="http://www.clkads.com/adServe/"], :root a[href^="http://adfarm.mediaplex.com/"], :root a[href^="http://adlev.neodatagroup.com/"], :root a[href^="http://wgpartner.com/"], :root a[href^="http://admingame.info/"], :root a[href^="http://adprovider.adlure.net/"], :root a[href^="http://www.sfippa.com/"], :root a[href^="http://adrunnr.com/"], :root div[id^="div_ad_stack_"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://ads.ad-center.com/"], :root a[href^="http://ads.affbuzzads.com/"], :root a[href^="https://trackjs.com/?utm_source"], :root a[href^="http://www.download-provider.org/"], :root a[href^="http://ads.expekt.com/affiliates/"], :root a[href^="http://adserver.adtech.de/"], :root a[href^="http://www.adxpansion.com"], :root a[href^="http://cdn.adstract.com/"], :root a[href^="http://adserver.adtechus.com/"], :root iframe[src^="http://cdn1.adexprt.com/"], :root a[href^="http://www.socialsex.com/"], :root a[href^="http://adserving.liveuniversenetwork.com/"], :root a[href^="http://adserving.unibet.com/"], :root a[href^="https://dediseedbox.com/clients/aff.php?"], :root a[href^="http://www.installads.net/"], :root a[href^="http://adsrv.keycaptcha.com"], :root a[href^="http://clickserv.sitescout.com/"], :root a[href^="http://adtrack123.pl/"], :root a[href^="http://adtrackone.eu/"], :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], :root a[href^="http://affiliate.coral.co.uk/processing/"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="http://affiliates.score-affiliates.com/"], :root a[href^="http://aflrm.com/"], :root div[id^="ads300_100-widget"], :root aside[id^="div-gpt-ad"], :root a[href^="http://www.greenmangaming.com/?tap_a="], :root a[href^="http://www.dealcent.com/register.php?affid="], :root a[href^="http://amzn.to/"] > img[src^="data"], :root a[href^="http://api.content.ad/"], :root a[href^="http://at.atwola.com/"], :root a[href^="https://www.dsct1.com/"], :root a[href^="http://games.ucoz.ru/"][target="_blank"], :root a[href^="http://bc.vc/?r="], :root a[href^="http://bestorican.com/"], :root a[href^="http://bluehost.com/track/"], :root a[href^="http://bonusfapturbo.nmvsite.com/"], :root a[href^="http://www.downloadthesefiles.com/"], :root a[href^="http://bs.serving-sys.com/"], :root a[href^="http://c.actiondesk.com/"], :root a[href^="http://goldmoney.com/?gmrefcode="], :root a[href^="http://callville.xyz/"], :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"], :root a[href^="http://campaign.bharatmatrimony.com/track/"], :root a[href^="http://casino-x.com/?partner"], :root a[href^="http://secure.signup-page.com/"], :root a[href^="http://lp.ilivid.com/"], :root a[href^="http://cdn.adsrvmedia.net/"], :root a[href^="http://www.accuserveadsystem.com/accuserve-go.php?"], :root a[href^="http://t.mdn2015x2.com/"], :root a[href^="http://cdn3.adbrau.com/"], :root a[style="display:block;width:300px;min-height:250px"][href^="http://li.cnet.com/click?"], :root a[href^="http://centertrust.xyz/"], :root a[href^="http://chaturbate.com/affiliates/"], :root div[id^="ads300_600-widget"], :root a[href^="http://click.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="http://click.plista.com/pets"], :root a[href^="http://clicks.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="http://clk.directrev.com/"], :root a[href^="http://clkmon.com/adServe/"], :root a[href^="http://connectlinking6.com/"], :root a[href^="http://contractallsticker.net/"], :root a[href^="http://cpaway.afftrack.com/"], :root a[href^="http://d2.zedo.com/"], :root a[href^="https://adhealers.com/"], :root a[href^="https://ad.atdmt.com/"], :root a[href^="http://data.committeemenencyclopedicrepertory.info/"], :root a[href^="http://www.fonts.com/BannerScript/"], :root a[href^="http://data.linoleictanzaniatitanic.com/"], :root a[href^="http://databass.info/"], :root div[id^="dmRosAdWrapper"], :root a[href^="http://ddownload39.club/"], :root iframe[src^="http://static.mozo.com.au/strips/"], :root div[id^="dfp-ad-"], :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"], :root a[href^="http://dethao.com/"], :root a[href^="http://www.bet365.com/dl/~offer?affiliate="], :root a[href^="http://dftrck.com/"], :root a[href^="http://www.torntvdl.com/"], :root a[href^="http://down1oads.com/"], :root a[href^="http://download-performance.com/"], :root a[href^="http://imads.integral-marketing.com/"], :root a[href^="http://duckcash.eu/AF_"], :root a[href^="http://eclkmpsa.com/"], :root a[href^="http://www.cash-duck.com/AF_"], :root a[href^="http://elite-sex-finder.com/?"], :root a[href^="http://www.downloadplayer1.com/"], :root a[href^="http://elitefuckbook.com/"], :root a[href^="http://srvpub.com/"], :root a[href^="http://fileupnow.rocks/"], :root a[href^="http://finaljuyu.com/"], :root a[href^="http://go.mobisla.com/"], :root a[href^="http://findersocket.com/"], :root a[href^="http://freesoftwarelive.com/"], :root a[href^="http://t.mdn2015x1.com/"], :root a[href^="http://galleries.pinballpublishernetwork.com/"], :root iframe[id^="google_ads_iframe"], :root a[href^="http://galleries.securewebsiteaccess.com/"], :root a[href^="http://www.affiliates1128.com/processing/"], :root a[href^="http://gca.sh/user/register?ref="], :root a[href^="http://get.slickvpn.com/"], :root a[href^="http://getlinksinaseconds.com/"], :root a[href^="http://go.ad2up.com/"], :root a[href^="http://go.seomojo.com/tracking202/"], :root a[href^="http://green.trafficinvest.com/"], :root a[href^="http://promos.bwin.com/"], :root a[href^="http://greensmoke.com/"], :root a[href^="http://n.admagnet.net/"], :root a[href^="http://guideways.info/"], :root a[target="_blank"][href^="http://api.taboola.com/"], :root a[href^="http://hdplugin.flashplayer-updates.com/"], :root div[id^="ADV-SLOT-"], :root a[href^="http://www.sex.com/?utm_"], :root a[href^="http://install.securewebsiteaccess.com/"], :root a[href^="http://istri.it/?"], :root a[href^="http://join3.bannedsextapes.com/track/"], :root a[href^="http://latestdownloads.net/download.php?"], :root a[href^="https://trust.zone/"], :root a[href^="http://linksnappy.com/?ref="], :root a[href^="http://www.tirerack.com/affiliates/"], :root a[href^="http://liversely.net/"], :root a[href^="http://lp.ezdownloadpro.info/"], :root div[class$="dealnews"] > .dealnews, :root a[href^="http://marketgid.com"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="http://www.idownloadplay.com/"], :root a[href^="http://www.flashx.tv/downloadthis"], :root a[href^="http://mo8mwxi1.com/"], :root a[href^="http://record.betsafe.com/"], :root a[href^="http://mojofun.info/"], :root a[href^="http://onclickads.net/"], :root a[href^="http://online.ladbrokes.com/promoRedirect?"], :root div[id^="MarketGid"], :root a[href^="http://www.graboid.com/affiliates/"], :root a[href^="http://papi.mynativeplatform.com:80/pub2/"], :root a[href^="http://partner.sbaffiliates.com/"], :root a[href^="http://serve.williamhill.com/promoRedirect?"], :root a[href^="http://prochina.link/"], :root a[href^="http://www.1clickdownloader.com/"], :root a[href^="http://prochina.space/"], :root a[href^="http://pubads.g.doubleclick.net/"], :root a[href^="http://www.brightwheel.info/"], :root a[href^="http://pwrads.net/"], :root a[href^="http://record.commissionking.com/"], :root a[href^="http://tezfiles.com/pr/"], :root a[href^="http://refer.webhostingbuzz.com/"], :root a[href^="http://rekoverr.com/"], :root a[href^="http://searchtabnew.com/"], :root a[href^="http://secure.hostgator.com/~affiliat/"], :root a[href^="http://see-work.info/"], :root a[href^="http://www.1clickmoviedownloader.info/"], :root a[href^="http://server.cpmstar.com/click.aspx?poolid="], :root a[href^="http://servicegetbook.net/"], :root a[href^="http://www.sex.com/pics/?utm_"], :root a[href^="http://sharesuper.info/"], :root a[href^="http://www.badoink.com/go.php?"], :root a[href^="http://stateresolver.link/"], :root a[href^="http://t.mdn2015x3.com/"], :root a[href^="http://t.wowtrk.com/"], :root a[href^="http://tour.affbuzzads.com/"], :root a[href^="http://track.adform.net/"], :root a[href^="http://wxdownloadmanager.com/dl/"], :root a[href^="http://track.incognitovpn.com/"], :root a[href^="http://www.pheedo.com/"], :root a[href^="http://tracking.crazylead.com/"], :root a[href^="http://www.friendlyquacks.com/"], :root a[href^="http://tracking.deltamediallc.com/"], :root a[href^="http://tracking.toroadvertising.com/"], :root a[href^="http://www.firstload.com/affiliate/"], :root a[href^="http://us.marketgid.com"], :root a[href^="http://webtrackerplus.com/"], :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"], :root a[href^="http://www.FriendlyDuck.com/AF_"], :root a[href^="http://www.TwinPlan.com/AF_"], :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"], :root a[href^="http://www.adshost2.com/"], :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"], :root a[href^="http://www.bet365.com/home/default.asp?affiliate="], :root input[onclick^="window.open('http://www.friendlyduck.com/AF_"], :root input[onclick^="window.open('http://www.FriendlyDuck.com/AF_"], :root div[itemtype="http://schema.org/WPAdBlock"], :root a[href^="http://www.clickansave.net/"], :root a[href^="http://www.dl-provider.com/search/"], :root a[href^="http://www.down1oads.com/"], :root a[href^="http://www.downloadweb.org/"], :root a[href^="http://www.quick-torrent.com/download.html?aff"], :root a[href^="http://www.firstclass-download.com/"], :root a[href^="http://www.firstload.de/affiliate/"], :root a[href^="http://www.fleshlight.com/"], :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"], :root a[href^="https://understandsolar.com/signup/?lead_source="][href*="&tracking_code="], :root a[href^="http://www.on2url.com/app/adtrack.asp"], :root a[href^="http://www.incredimail.com/?id="], :root a[href^="http://www.zergnet.com/i/"], :root a[href^="http://www.ireel.com/signup?ref"], :root a[href^="http://www.plus500.com/?id="], :root a[href^="http://www.linkbucks.com/referral/"], :root a[href^="http://www.liutilities.com/"], :root a[href^="http://www.liversely.net/"], :root iframe[id^="google_ads_frame"], :root a[href^="http://www.mobileandinternetadvertising.com/"], :root a[href^="http://www.my-dirty-hobby.com/?sub="], :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"], :root a[href^="https://go.ad2up.com/"], :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"], :root a[href^="http://www.sex.com/videos/?utm_"], :root a[href^="http://www.mysuperpharm.com/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="http://www.myvpn.pro/"], :root a[href^="http://www.pinkvisualpad.com/?revid="], :root a[href^="http://www.revenuehits.com/"], :root a[href^="http://www.richducks.com/"], :root a[href^="http://www.seekbang.com/cs/"], :root a[href^="http://www.sexgangsters.com/?pid="], :root a[href^="http://www.streamate.com/exports/"], :root a[href^="http://www.text-link-ads.com/"], :root a[href^="http://www.torntv-downloader.com/"], :root a[href^="http://www.twinplan.com/AF_"], :root a[href^="http://www.urmediazone.com/signup"], :root a[href^="http://www.wantstraffic.com/"], :root a[href^="http://www.webtrackerplus.com/"], :root a[href^="http://www.xmediaserve.com/"], :root a[href^="http://www.yourfuckbook.com/?"], :root a[href^="http://www1.clickdownloader.com/"], :root a[href^="https://www.adskeeper.co.uk/"], :root a[href^="http://yads.zedo.com/"], :root a[href^="http://z1.zedo.com/"], :root div[id^="ad-server-"], :root a[href^="http://zevera.com/afi.html"], :root a[href^="https://affiliates.bet-at-home.com/processing/"], :root a[href^="https://atomidownload.com/"], :root a[href^="https://click.plista.com/pets"], :root a[href^="https://dltags.com/"], :root div[id^="dfp-slot-"], :root a[href^="https://farm.plista.com/pets"], :root a[href^="https://secure.eveonline.com/ft/?aid="], :root a[href^="https://torguard.net/aff.php"], :root a[href^="https://trklvs.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://www.oboom.com/ad/"], :root a[href^="https://www.popads.net/users/"], :root a[href^="https://www.secureupload.eu/suprerefid="], :root a[onmousedown^="this.href='/wp-content/embed-ad-content/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root bottomadblock, :root div > [class][onclick*=".updateAnalyticsEvents"], :root div[class^="gemini-ad"], :root div[class^="proadszone-"], :root div[id^="YFBMSN"], :root div[id^="acm-ad-tag-"], :root div[id^="adrotate_widgets-"], :root div[id^="ads250_250-widget"], :root div[id^="ads300_250-widget"], :root div[id^="advads-"], :root div[id^="cns_ads_"], :root div[id^="google_ads_iframe_"], :root div[id^="google_dfp_"], :root div[id^="lazyad-"], :root div[id^="proadszone-"], :root div[id^="q1-adset-"], :root topadblock, :root div[itemtype="http://www.schema.org/WPAdBlock"], :root iframe[src^="http://ad.yieldmanager.com/"], :root iframe[src^="http://cdn2.adexprt.com/"], :root img[alt^="Fuckbook"], :root p[id^="div-gpt-ad-"], :root script[src^="http://free-shoutbox.net/app/webroot/shoutbox/sb.php?shoutbox="] + #freeshoutbox_content { display: none !important; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body>
+	<h1 class="screen-reader-text">Tania Rascia Web Design and Development</h1>
+	<a class="screen-reader-text" href="https://www.taniarascia.com/getting-started-with-git/#main-content">Skip Navigation</a>
+	
+	
+
+	
+
+	<main class="main" id="main-content"><article id="post-6">
+
+	<header class="single-header">
+		<div class="small-container">
+						<a href="https://www.taniarascia.com/getting-started-with-git/"><img src="./index_files/git-150x150.png" alt="Getting Started with Git" height="150" width="150"></a>
+						<h1>
+				Getting Started with Git			</h1>
+			<div class="the-time"><time datetime="2015-09-24">
+				September 24, 2015</time> /
+				<a href="https://www.taniarascia.com/getting-started-with-git/#comments">23 responses</a>			</div>
+			
+		</div>
+	</header>
+
+	<section class="single-body">
+		<div class="small-container">
+			<p>Git is a difficult subject to tackle for self-taught web developers who didn’t learn to code with a team. If you’ve always worked alone and want an explanation of how to get started with Git, this tutorial is for you.</p>
+<blockquote><p>I’m an egotistical bastard, and I name all my projects after myself. First Linux, now Git.<br>
+<cite>– Linus Torvalds, author of Git</cite></p></blockquote>
+<h4>Prerequisites</h4>
+<ul>
+<li>Ability to create and upload a website.</li>
+</ul>
+<h4>Goals</h4>
+<ul>
+<li>Learn what Git is and how it can be useful.</li>
+<li>Create a local project and launch it to a live server with Git using the command line.</li>
+</ul>
+<h2>What is Git?</h2>
+<p><a href="https://en.wikipedia.org/wiki/Git_(software)">Git</a> is a version control system (VCS) for code. It is used to keep track of revisions and allow a developer or dev team to work together on a project through branches. </p>
+<blockquote class="details"><p><em>Git is not GitHub.</em> Git is the system, and GitHub is a repository hosting service (the most popular of many).</p></blockquote>
+<h2>Git vs. FTP</h2>
+<p>You may be used to the <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> (File Transfer Protocol) process of file upload.</p>
+<h5>FTP</h5>
+<p>Local Environment ⇋ FTP Program ⇋ Live Server<br>
+<u>file:///Users/you/project</u> ⇋ <b>Transmit/WinFTP</b> ⇋ <u>http://domain.com</u></p>
+<p>The way we will use Git today is very similar.</p>
+<h5>Git</h5>
+<p>Local Environment ⇋ Git Repository ⇋ Live Server<br>
+<u>file:///Users/you/project</u> ⇋ <b>GitHub.com</b> ⇋ <u>http://domain.com</u></p>
+<p>Of course, the arrows can go in any direction for both methods – upload (push) and download (pull).</p>
+<blockquote class="details"><p>Tower, SourceTree, Github for Mac/Windows – these are all GUIs, or Graphical User Interfaces. A GUI is a program that utilizes graphics to create a user-friendly experience, such as Windows to MS-DOS. These programs are useful to learn, especially in a team environment, but in this article, we’re going to do everything through the command line. Don’t worry, it’ll be great.</p></blockquote>
+<h2>Step 1: Installation</h2>
+<h3>Mac</h3>
+<p>Open the Terminal program. Type <code>git --version</code> and press enter. If a version number is returned, Git is already installed. If something along the lines of <code>-bash: git: command not found</code> pops up, install <a href="https://developer.apple.com/xcode/">Xcode</a> from the App Store. </p>
+<p>In XCode, install Command Line Tools: <code> &gt; Preferences &gt; Downloads &gt; Command Line Tools</code>. You can now use Git through Terminal. </p>
+<blockquote class="details"><p>Although it’s not necessary for the rest of this article, now would be a good time to install <a href="http://brew.sh/">Homebrew</a> – a tool for simplifying the installation and management of dev tools.
+</p></blockquote>
+<h3>Windows</h3>
+<p>Download <a href="https://git-scm.com/download/win">Git for Windows</a>. You will be using the Git Bash program. It will utilize all the same commands as Terminal.</p>
+<h3>Step 2: Create an Online Git Repository</h3>
+<p><a href="http://www.github.com/">GitHub</a> is the most popular location to host repositories, so go ahead and make an account there if you haven’t.</p>
+<p>I’ll assume your username is <strong>you</strong>. This would make your new GitHub account <code>github.com/you</code>.</p>
+<p>Once you’ve made your account, create a repository by clicking <strong>Add New Repo</strong>. Do not initialize with a README.md or .gitignore at this point. We can call the repository <strong>project</strong>. Your repository has been created at <code>github.com/you/project</code>. It should be completely empty.</p>
+<h2>Step 3: Create a Local Project</h2>
+<p>If you’re not at all familiar with the command prompt, please read the first chapter or two of the <a href="http://learnpythonthehardway.org/book/appendixa.html">command line crash course</a>. </p>
+<p>Here are the most important commands, and all you need to know to get started.</p>
+<h3>Basic command line reference</h3>
+<ul>
+<li><code>pwd</code> <strong>Print Working Directory</strong> – shows the exact directory you’re working in.</li>
+<li><code>ls</code> <strong>List Directories</strong> – lists all the files and folders in your current directory.</li>
+<li><code>cd</code> <strong>Change Directory</strong> – change to another directory.</li>
+<li><code>mkdir</code> <strong>Make Directory</strong> – create a new directory.</li>
+</ul>
+<blockquote class="details"><p>
+Remember, Terminal (Mac) and Git Bash (Windows) are both command line shells. Any Git related Shell commands can be done the same through both.
+</p></blockquote>
+<p>When you open Terminal, you will start off in your main directory. I will assume your computer has the same username as your GitHub account.</p>
+<h5>1. Confirm your location.</h5>
+<pre><code>pwd</code></pre>
+<pre><div class="terminal">/Users/you</div></pre>
+<h5>2. Create a new folder called project-local.</h5>
+<pre><code>mkdir project-local</code></pre>
+<h5>3. List your directories.</h5>
+<pre><code>ls</code></pre>
+<p>You should see <strong>project-local</strong> in the list of directories. Of course, you could have created the directory through Finder or Explorer, but it’s a useful command to know.</p>
+<h5>4. Move into the newly created directory.</h5>
+<pre><code>cd project-local</code></pre>
+<p>Now you’re in the folder where your local project and Git repository will live. From here, we will begin using git commands. There is a <a href="http://gitref.org/">massive amount</a> of commands for Git, but we only need a few to get started.</p>
+<h3>Basic Git command reference</h3>
+<ul>
+<li><code>git config</code> – Configure Git</li>
+<li><code>git init</code> – Initialize Git repository</li>
+<li><code>git status</code> – Check the status of a Git repository</li>
+<li><code>git add</code> – Track files</li>
+<li><code>git commit</code> – Commit tracked files</li>
+<li><code>git push</code> – Upload files</li>
+<li><code>git pull</code> – Download files</li>
+</ul>
+<p>All of the future commands we do today will only apply to your local Git environment. However, there is one important global step to take before doing anything else – configure your Git account.</p>
+<h5>5. Configure your global Git account.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"Firstname Lastname"</span>
+<span class="token function">git</span> config --global user.email username@email.com</code></pre>
+<p>Make sure you’re still in the <strong>project-local</strong> folder, then move on.</p>
+<h5>6. Initialize Git repository.</h5>
+<pre><code>git init</code></pre>
+<div class="terminal">Initialized empty Git repository in /Users/you/project-local/.git/</div>
+<p>Great! Now you have an empty Git repo on your local computer. </p>
+<h5>7. Hook up local directory with the repo we made at github.com.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> remote add origin https://github.com/you/project</code></pre>
+<p>Terminal won’t respond, but it was successful. Go ahead and add a file to the <strong>project-local</strong> directory. You can add as many files as you want, but I will assume you added two files – <strong>index.html</strong> and <strong>style.css</strong>.</p>
+<h5>8. Check the status of your local repository.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> status</code></pre>
+<pre><div class="terminal">On branch master
+Initial commit
+
+Untracked files:
+(use "git add ..." to include in what will be committed)
+
+&nbsp;&nbsp;<span style="color:red;">index.html
+&nbsp;&nbsp;style.css</span>
+
+nothing added to commit but untracked files present (use "git add" to track)</div></pre>
+<p>Okay, so now it knows that there are two files in the directory, but they’re not a part of the Git repo. At this point we have to <strong>track</strong> the files with the <code>add</code> command.</p>
+<h5>9. Add ALL the files to the repo.</h5>
+<p> (case sensitive command!)</p>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> add <span class="token keyword">.</span></code></pre>
+<p>Let’s check the status again with <code>git status</code>.</p>
+<pre><div class="terminal">On branch master
+Initial commit
+
+Changes to be committed:
+(use "git rm --cached ..." to unstage)
+
+&nbsp;&nbsp;<span style="color:green;">new file: index.html
+&nbsp;&nbsp;new file: style.css</span></div></pre>
+<p>So, what did that do? The files are green now instead of red. Are we ready? Not quite yet. </p>
+<h5>10. Commit tracked files to the master branch</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> commit -am <span class="token string">"Initial Commit"</span></code></pre>
+<pre><div class="terminal">[master (root-commit)] Initial
+ 2 files changed, 34 insertions(+)
+
+&nbsp;&nbsp;create mode index.html
+&nbsp;&nbsp;create mode style.css</div></pre>
+<p>With this command, I commit all the files (-a), include a message (-m), listed here (“Initial Commit”). Everything in this line is mandatory. </p>
+<blockquote class="details"><p>
+Do not forget to add a comment when you commit your files. Strategic commenting in Git is as important as commenting code. If you accidentally forget to add a comment and end up in a strange screen where you can no longer enter any commands, press ESC and type <code>:q!</code> followed by ENTER.
+</p></blockquote>
+<h5>11. Push the files to the Git repo at github.com.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> push origin master</code></pre>
+<p>Terminal will prompt you to enter your GitHub username and password. When you type in your password, it might not show that you’ve typed anything, but it’s being entered.</p>
+<p>Now refresh your GitHub page. Success! All your files are now hosted at Github.com!</p>
+<blockquote class="details"><p>
+Just as a GUI like Tower is not necessary for Git to function, neither is an online repository host like GitHub.com! Try creating a Git connection between two local directories.
+</p></blockquote>
+<h2>Step 4: Push to a Live Server</h2>
+<p>I will now assume that you have a host somewhere to upload your files to. GeoCities, maybe?</p>
+<p>When you upload to a server via FTP, you’ll have some settings like this:</p>
+<p><strong>Host:</strong> ftp.domain.com<br>
+<strong>Username:</strong> you<br>
+<strong>Password:</strong> hunter2</p>
+<p>You enter those credentials into the FTP GUI, and you’re in. <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> (Secure Shell) is very much the same – in the command prompt, you’ll use the ssh command to enter the host. Your host should show you your SSH settings by your FTP settings.</p>
+<p>You can do everything through the same Terminal window, but for the sake of clarity let’s open a new Terminal window (Command + N).</p>
+<h5>1. SSH into your host.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">ssh</span> username@ssh.domain.com</code></pre>
+<p>You will be prompted to enter your password. </p>
+<p>Now you’re in!</p>
+<blockquote class="details"><p>
+Remember that when you SSH into your host, you are now connected to that host! Your local environment no longer exists in that Terminal. To escape SSH and return to the local Terminal, type <code>exit</code> followed by enter.
+</p></blockquote>
+<p>It would be smart to have an FTP program open so you can see the file structure of the host and the changes you’re making. Every host is different. Find the wwwroot or public folder and <code>cd</code> into the proper location in your remote Terminal window. </p>
+<p>Now make a new folder somewhere in your host’s directory. You can call it whatever you want – it can match the name of the GitHub repo or not. In this case, we will call it <strong>project-remote</strong> and assume it’s a folder in the root directory.</p>
+<p>Once you’re in, you will follow many of the same steps as before, except this time we will be <strong>pulling</strong> (downloading) from GitHub.com, instead of <strong>pushing</strong> (uploading) from local to Github.com.</p>
+<p>I’m ignoring branches for now, since we’re only working with one branch – the <strong>master</strong> branch.</p>
+<h5>2. List your Git settings.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> --list</code></pre>
+<p>You should configure your e-mail and username as you did on your home computer.</p>
+<h5>3. Print your working directory to make sure you’re in the right location.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">pwd</span></code></pre>
+<p>Use <code>cd</code> and <code>mkdir</code> to navigate to the location you want your new Git repo to live. Then…</p>
+<h5>4. Initialize Git repo.</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> init</code></pre>
+<h5>5. Add remote Git repo to origin master (branch).</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> remote add origin https://github.com/you/project.git</code></pre>
+<h5>6. Pull (download) from origin master (branch).</h5>
+<pre class=" language-bash"><code class=" language-bash"><span class="token function">git</span> pull origin master</code></pre>
+<p>Now, when you go to http://domain.com/project-remote, all the files are there, and the site is live!</p>
+<p>I wanted to write the article I wish I had in front of me when I tried to teach myself everything at once (Git, command line, and SSH) and ran into pitfalls.</p>
+			<div class="section-content share" id="share">
+			<h2>The Author</h2>
+			<p><small>If you've found this article helpful or interesting and think others would benefit from reading it, please share!</small></p>
+				<a href="https://twitter.com/share?url=https://www.taniarascia.com/getting-started-with-git/&amp;text=Getting%20Started%20with%20Git&amp;via=taniarascia&amp;hashtags=webdev" target="_blank">	
+				<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x twitter"></i>
+				<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+				</span>
+				</a>
+				<a href="https://www.reddit.com/submit?url=https://www.taniarascia.com/getting-started-with-git/&amp;title=Getting%20Started%20with%20Git" target="_blank">
+				<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x reddit"></i>
+				<i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+				</span>
+				</a>
+				<a href="http://www.facebook.com/sharer.php?u=https://www.taniarascia.com/getting-started-with-git/" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x facebook"></i>
+					<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+					</a>
+				<a href="https://news.ycombinator.com/submitlink?u=https://www.taniarascia.com/getting-started-with-git/&amp;t=Getting%20Started%20with%20Git" target="_blank">
+				<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x hackernews"></i>
+				<i class="fa fa-hacker-news fa-stack-1x fa-inverse"></i>
+				</span>
+				</a>
+			</div>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<p><img src="./index_files/face-300x300.jpg" class="my-avatar">Thank you for reading! I'm <strong>Tania Rascia</strong>, and I write no-nonsense guides for designers and developers. <strong>If my content has been valuable to you, please help me keep the site <mark>ad-free</mark> and continuously updated with quality tutorials and material by making a donation.</strong> Any amount helps and is greatly appreciated! Otherwise, <a href="https://www.taniarascia.com/contact">let me know</a> any ideas you have on a course you'd be eager to see.</p>
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+			">
+			<input type="submit" name="submit" alt="PayPal - The safer, easier way to pay online!" class="button secondary-button" value="Donate!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" style="display: none !important;">
+			</form>
+
+		</div>
+
+	</section>
+
+</article>
+
+<section id="comments" class="comments-area">
+	<div class="small-container">
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Write a response <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.taniarascia.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name</label> <input id="author" name="author" type="text" value="" size="30" maxlength="245"></p>
+<p class="comment-form-email"><label for="email">Email</label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="6" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="bf01243174"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1500449836437"></form>
+			</div><!-- #respond -->
+	
+			
+			<h3 class="comments-title">
+				Discussion
+							</h3>
+			<ul class="comment-list">
+						<li class="comment even thread-even depth-1" id="comment-4186">
+				<div id="div-comment-4186" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/fa4e5c816f31158524811bd9675ed9a3" srcset="https://secure.gravatar.com/avatar/fa4e5c816f31158524811bd9675ed9a3?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Nagarjuna Rachakunta</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-4186">
+			May 18, 2017 at 4:34 am</a>		</div>
+
+		<p>Thanks For Giving Such A valuable Information</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=4186#respond" onclick="return addComment.moveForm( &quot;div-comment-4186&quot;, &quot;4186&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Nagarjuna Rachakunta">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3976">
+				<div id="div-comment-3976" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/01fa8dc4a17e615031a0aa096b6fdeff" srcset="https://secure.gravatar.com/avatar/01fa8dc4a17e615031a0aa096b6fdeff?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Dev</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3976">
+			April 29, 2017 at 2:07 am</a>		</div>
+
+		<p>I’m not familiar with this all but I would like to know how can we get started with BitBucket? It’s giving free to create private repo so.</p>
+<p>Thank you, Tania!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3976#respond" onclick="return addComment.moveForm( &quot;div-comment-3976&quot;, &quot;3976&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Dev">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3875">
+				<div id="div-comment-3875" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/9856a2d1a8b0019ea764b0b705d2aa3c" srcset="https://secure.gravatar.com/avatar/9856a2d1a8b0019ea764b0b705d2aa3c?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Adrian Beria-Radinax</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3875">
+			April 13, 2017 at 4:57 pm</a>		</div>
+
+		<p>This was really helpful! Thank you very much!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3875#respond" onclick="return addComment.moveForm( &quot;div-comment-3875&quot;, &quot;3875&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Adrian Beria-Radinax">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-3050">
+				<div id="div-comment-3050" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/saved_resource" srcset="https://secure.gravatar.com/avatar/?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo avatar-default" height="45" width="45">			<cite class="fn">Simon</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3050">
+			January 27, 2017 at 12:03 pm</a>		</div>
+
+		<p>for Step 5:<br>
+git config –global user.name “Firstname Lastname”<br>
+git config –global user.email <a href="mailto:username@email.com">username@email.com</a></p>
+<p>Do I type the same thing, or replace “Firstname Lastname” with my first and lastname?<br>
+and for the 2nd line, do I type exactly the same thing?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3050#respond" onclick="return addComment.moveForm( &quot;div-comment-3050&quot;, &quot;3050&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Simon">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-3095">
+				<div id="div-comment-3095" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/5451944c5f36981d492f279bd2b20beb" srcset="https://secure.gravatar.com/avatar/5451944c5f36981d492f279bd2b20beb?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Vaibhav</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3095">
+			February 1, 2017 at 2:48 am</a>		</div>
+
+		<p>You should use your name and email. It basically sets Git up to identify that it is you who made the commit.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3095#respond" onclick="return addComment.moveForm( &quot;div-comment-3095&quot;, &quot;3095&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Vaibhav">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-3024">
+				<div id="div-comment-3024" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/5a08feeaa65a52a4ab92b2b27abedfac" srcset="https://secure.gravatar.com/avatar/5a08feeaa65a52a4ab92b2b27abedfac?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.oshogarg.com/" rel="external nofollow" class="url">Osho Garg</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3024">
+			January 25, 2017 at 12:12 pm</a>		</div>
+
+		<p>Thank you very much for writing this tutorial <img draggable="false" class="emoji" alt="🙂" src="./index_files/1f642.svg"></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3024#respond" onclick="return addComment.moveForm( &quot;div-comment-3024&quot;, &quot;3024&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Osho Garg">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2980">
+				<div id="div-comment-2980" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c3a94a2bf2c427bf0de96a3af00bae66" srcset="https://secure.gravatar.com/avatar/c3a94a2bf2c427bf0de96a3af00bae66?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Serhan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-2980">
+			January 22, 2017 at 2:49 am</a>		</div>
+
+		<p>Geocities?<br>
+Wow good ol’ days…Thank you for this article Tania</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=2980#respond" onclick="return addComment.moveForm( &quot;div-comment-2980&quot;, &quot;2980&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Serhan">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2669">
+				<div id="div-comment-2669" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/saved_resource" srcset="https://secure.gravatar.com/avatar/?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo avatar-default" height="45" width="45">			<cite class="fn"><a href="http://denisazy.github.io/" rel="external nofollow" class="url">Dalong</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-2669">
+			December 9, 2016 at 6:47 pm</a>		</div>
+
+		<p>Thank you very much,your tutorial was very helpful.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=2669#respond" onclick="return addComment.moveForm( &quot;div-comment-2669&quot;, &quot;2669&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Dalong">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-2662">
+				<div id="div-comment-2662" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/3b5ebf1c042ec88c5bae45f2b2f2bb64" srcset="https://secure.gravatar.com/avatar/3b5ebf1c042ec88c5bae45f2b2f2bb64?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Rand</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-2662">
+			December 7, 2016 at 5:31 pm</a>		</div>
+
+		<p>I wish more experts would cut to the chase like you do.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=2662#respond" onclick="return addComment.moveForm( &quot;div-comment-2662&quot;, &quot;2662&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Rand">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-2483">
+				<div id="div-comment-2483" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c0737eb816544b1f51bec3ae114c62ea" srcset="https://secure.gravatar.com/avatar/c0737eb816544b1f51bec3ae114c62ea?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://chrisbrennanpgh.com/" rel="external nofollow" class="url">Christopher</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-2483">
+			November 7, 2016 at 3:22 pm</a>		</div>
+
+		<p>This is a damn good write up. The clarity, Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=2483#respond" onclick="return addComment.moveForm( &quot;div-comment-2483&quot;, &quot;2483&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Christopher">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-1845">
+				<div id="div-comment-1845" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/a9edc31663e0981832a219d96e0fd655" srcset="https://secure.gravatar.com/avatar/a9edc31663e0981832a219d96e0fd655?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.rashard.rocks/" rel="external nofollow" class="url">rashard</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-1845">
+			August 2, 2016 at 10:13 pm</a>		</div>
+
+		<p>Thanks Tania for this article! I would like to say that when I tried to complete part 11 of step 3 I had to do a git pull before I could do a git push. After I figured that little part out I was off and running. Im using git version 2.7.4 (Apple Git-66) When I tried to push I got this error</p>
+<p>Thanks again, this gave me great insight into the process!!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=1845#respond" onclick="return addComment.moveForm( &quot;div-comment-1845&quot;, &quot;1845&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to rashard">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-1692">
+				<div id="div-comment-1692" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/878ae475e39652a793f7b198b3d5a2b4" srcset="https://secure.gravatar.com/avatar/878ae475e39652a793f7b198b3d5a2b4?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://ibanner.co.il/" rel="external nofollow" class="url">Itay Banner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-1692">
+			June 23, 2016 at 5:09 pm</a>		</div>
+
+		<p>Your tutorials are awesome, and very helpful. Here’s a tip you might want to consider adding to this one: If SSH isn’t permitted under your hosting plan (like in my case…), you can use <a href="https://ftploy.com/" rel="nofollow">FTPloy.com</a> instead! I just found it today and it’s very promising. You connect to GitHub, set your server credentials, and when you push to GitHub it automatically deploys your code (I have no affiliation whatsoever with FTPloy)</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=1692#respond" onclick="return addComment.moveForm( &quot;div-comment-1692&quot;, &quot;1692&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Itay Banner">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-1611">
+				<div id="div-comment-1611" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/a2f0d50e9ab0923e6b08c0a4f09b38d3" srcset="https://secure.gravatar.com/avatar/a2f0d50e9ab0923e6b08c0a4f09b38d3?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.whimsyscript.com/" rel="external nofollow" class="url">Nkem</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-1611">
+			June 8, 2016 at 4:35 am</a>		</div>
+
+		<p>OMG!, you are a life saver. I have been putting off learning git it looked so difficult but thanks to you (I think you are awesome!) , I am so open to learning more. I woke up today (I started reading this article late last night) and I didn’t need to look at your article to repeat the steps. Please don’t mind my rambling, I am just so happy that I have finally understood basics of Git/Github.</p>
+<p>I am using your developing a wordpress theme from scratch article to learn and I am following each step closely.</p>
+<p>Thanks again and keep being concise/brilliant in your tutorials</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=1611#respond" onclick="return addComment.moveForm( &quot;div-comment-1611&quot;, &quot;1611&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Nkem">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-860">
+				<div id="div-comment-860" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/240293231f52d33779556c9e64f45c76" srcset="https://secure.gravatar.com/avatar/240293231f52d33779556c9e64f45c76?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://lisettte.com/" rel="external nofollow" class="url">Lisette</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-860">
+			March 22, 2016 at 3:32 am</a>		</div>
+
+		<p>Fantastic tutorial with just the right amount of explanation; thank you!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=860#respond" onclick="return addComment.moveForm( &quot;div-comment-860&quot;, &quot;860&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Lisette">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-841">
+				<div id="div-comment-841" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/0b42af06d8fa2d534975f95433520b99" srcset="https://secure.gravatar.com/avatar/0b42af06d8fa2d534975f95433520b99?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://letuschasethesun.com/" rel="external nofollow" class="url">Charlie</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-841">
+			March 20, 2016 at 8:57 pm</a>		</div>
+
+		<p>Concise and useful. Getting in with the hip new way of git instead of FTP, many articles/tuts don’t illustrate or demonstrate how easy the concept of pushing and pulling from local to dev. You helped me get on my way. Greetings from Florida</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=841#respond" onclick="return addComment.moveForm( &quot;div-comment-841&quot;, &quot;841&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Charlie">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-199">
+				<div id="div-comment-199" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/b3f3c23c66afb73576ddc52f696778af" srcset="https://secure.gravatar.com/avatar/b3f3c23c66afb73576ddc52f696778af?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Denis</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-199">
+			December 10, 2015 at 5:41 pm</a>		</div>
+
+		<p>Finaly I have know with function the Github command!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=199#respond" onclick="return addComment.moveForm( &quot;div-comment-199&quot;, &quot;199&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Denis">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-hi-tania bypostauthor even depth-2" id="comment-204">
+				<div id="div-comment-204" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c01ee7f3a87a4d738ff35a92d34e1503" srcset="https://secure.gravatar.com/avatar/c01ee7f3a87a4d738ff35a92d34e1503?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.taniarascia.com/" rel="external nofollow" class="url">Tania</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-204">
+			December 13, 2015 at 9:11 pm</a>		</div>
+
+		<p>I’m glad you found it useful!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=204#respond" onclick="return addComment.moveForm( &quot;div-comment-204&quot;, &quot;204&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Tania">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-137">
+				<div id="div-comment-137" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/509c1e78e7ff21eeae6883c6e394b928" srcset="https://secure.gravatar.com/avatar/509c1e78e7ff21eeae6883c6e394b928?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">nick3499</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-137">
+			December 1, 2015 at 3:00 am</a>		</div>
+
+		<p>Appreciating how you get right into instruction without initial introductory fluff or a history lesson.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=137#respond" onclick="return addComment.moveForm( &quot;div-comment-137&quot;, &quot;137&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to nick3499">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-hi-tania bypostauthor even depth-2" id="comment-140">
+				<div id="div-comment-140" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c01ee7f3a87a4d738ff35a92d34e1503" srcset="https://secure.gravatar.com/avatar/c01ee7f3a87a4d738ff35a92d34e1503?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.taniarascia.com/" rel="external nofollow" class="url">Tania</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-140">
+			December 1, 2015 at 2:23 pm</a>		</div>
+
+		<p>Thank you! I try to give the right amount of explanation to get started without being long-winded.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=140#respond" onclick="return addComment.moveForm( &quot;div-comment-140&quot;, &quot;140&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Tania">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-3">
+				<div id="div-comment-3" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/f3a7fcb4814ed5325139ed8d9ee10dd9" srcset="https://secure.gravatar.com/avatar/f3a7fcb4814ed5325139ed8d9ee10dd9?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">dylan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-3">
+			October 1, 2015 at 7:11 pm</a>		</div>
+
+		<p>Yes, thank you this was very, very helpful.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=3#respond" onclick="return addComment.moveForm( &quot;div-comment-3&quot;, &quot;3&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to dylan">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-hi-tania bypostauthor even depth-2" id="comment-4">
+				<div id="div-comment-4" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c01ee7f3a87a4d738ff35a92d34e1503" srcset="https://secure.gravatar.com/avatar/c01ee7f3a87a4d738ff35a92d34e1503?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.taniarascia.com/" rel="external nofollow" class="url">Tania</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-4">
+			October 2, 2015 at 9:27 am</a>		</div>
+
+		<p>You’re welcome! I’m thrilled that you found it useful! <img draggable="false" class="emoji" alt="🙂" src="./index_files/1f642.svg"></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=4#respond" onclick="return addComment.moveForm( &quot;div-comment-4&quot;, &quot;4&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Tania">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-2">
+				<div id="div-comment-2" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/7ae520b863b699719aff19d969ccf059" srcset="https://secure.gravatar.com/avatar/7ae520b863b699719aff19d969ccf059?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn">Daniel</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-2">
+			October 1, 2015 at 6:05 pm</a>		</div>
+
+		<p>Thanks for creating this!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=2#respond" onclick="return addComment.moveForm( &quot;div-comment-2&quot;, &quot;2&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Daniel">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-hi-tania bypostauthor even depth-2" id="comment-5">
+				<div id="div-comment-5" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./index_files/c01ee7f3a87a4d738ff35a92d34e1503" srcset="https://secure.gravatar.com/avatar/c01ee7f3a87a4d738ff35a92d34e1503?s=90&amp;d=mm&amp;r=g 2x" class="avatar avatar-45 photo" height="45" width="45">			<cite class="fn"><a href="http://www.taniarascia.com/" rel="external nofollow" class="url">Tania</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://www.taniarascia.com/getting-started-with-git/#comment-5">
+			October 2, 2015 at 9:27 am</a>		</div>
+
+		<p>You’re welcome!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.taniarascia.com/getting-started-with-git/?replytocom=5#respond" onclick="return addComment.moveForm( &quot;div-comment-5&quot;, &quot;5&quot;, &quot;respond&quot;, &quot;6&quot; )" aria-label="Reply to Tania">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+			</ul>
+			
+					</div>
+</section>
+<section class="newsletter">
+	<div class="small-container text-center">
+		<h2>Tania's List</h2>
+		<p>My tutorials, guides, and articles for <strong>web designers, developers, and autodidacts</strong>, sent out once a month or so. No bullshit, ads, or tricks.</p>
+		<div id="mc_embed_signup">
+			<form action="https://taniarascia.us12.list-manage.com/subscribe/post?u=ec794fab6e35a491a001cc25d&amp;id=5276386071" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+				<label for="mce-EMAIL"><span class="screen-reader-text">Email</span></label><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ec794fab6e35a491a001cc25d_5276386071" tabindex="-1" value=""></div>
+				<div class="clear"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+ <div class="small-container flex-container">
+	 <div class="footer-social">
+		 <p>I'm <strong><a href="https://www.taniarascia.com/me">Tania Rascia</a></strong>, a web designer/developer, autodidact, tech writer and problem solver. I love hiking, karaoke, recording music, and building communities. <strong><a href="https://www.taniarascia.com/contact">Say hello!</a></strong></p>
+	  <div class="social-icons">
+     <a href="https://www.taniarascia.com/feed"><i class="fa fa-rss fa-2x"></i></a>
+     <a href="https://twitter.com/taniarascia" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+     <a href="https://github.com/taniarascia" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+     <a href="https://stackoverflow.com/users/4541434/tania-rascia" target="_blank"><i class="fa fa-stack-overflow fa-2x"></i></a>
+     <a href="https://www.linkedin.com/in/taniarascia/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+    </div>
+    <p>Open source <a href="https://opensource.org/licenses/MIT">MIT</a>.</p>
+	 </div>
+	 <div class="footer-support">
+		 <p>My site is <strong class="pink">free</strong> – and free of ads, clickbait, popups, guest posts, and sponsored content. Has this site been valuable to you? Please consider <strong>donating</strong> so I can continue creating!</p>
+     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+      ">
+      <input type="submit" name="submit" alt="PayPal - The safer, easier way to pay online!" class="button secondary-button" value="Donate!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" style="display: none !important;">
+     </form>
+	 </div>
+	</div>
+</footer>
+	
+</main>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var PowerStatsParams = {"ajaxurl":"https:\/\/www.taniarascia.com\/wp-admin\/admin-ajax.php","ci":"YTo0OntzOjEyOiJjb250ZW50X3R5cGUiO3M6NDoicG9zdCI7czo4OiJjYXRlZ29yeSI7czoxNDoiNiwyLDkyLDQsMTQsNTYiO3M6MTA6ImNvbnRlbnRfaWQiO2k6NjtzOjY6ImF1dGhvciI7czo4OiJoaS10YW5pYSI7fQ==.725cc5bad08f104d12ccc82632ee28be"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./index_files/wp-power-stats.js.download"></script>
+<script type="text/javascript" src="./index_files/jquery.js.download"></script>
+<script type="text/javascript" src="./index_files/prism.js.download"></script>
+<script type="text/javascript" src="./index_files/script.js.download"></script>
+<script type="text/javascript" src="./index_files/form.js.download"></script>
+	
+<script type="application/ld+json">
+{ "@context": "http://schema.org", 
+ "@type": "TechArticle",
+ "headline": "Getting Started with Git",
+ "proficiencyLevel": "Beginner/intermediate",
+ "image": "https://www.taniarascia.com/wp-content/uploads/git.png",
+   "author": {
+      "@type": "Person",
+      "name": "Tania Rascia"
+    },
+ "genre": "Tutorials, Web, Workflow, ", 
+ "keywords": "git, setup, version control, ", 
+ "url": "https://www.taniarascia.com/getting-started-with-git/",
+ "datePublished": "2015-09-24",
+ "description": "Learn how to use Git to create a local project and upload files to a remote server with the command line."
+ }
+</script>	
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
+
+</body></html>
